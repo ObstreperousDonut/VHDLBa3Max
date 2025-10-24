@@ -12,3 +12,34 @@ architecture Behavioral of and_gate is
 begin
     led <= sw(0) AND sw(1);
 end Behavioral;
+
+
+####################################################################################################################
+
+
+XDC zybo 
+
+## ===== SWITCHES =====
+set_property -dict { PACKAGE_PIN G15 IOSTANDARD LVCMOS33 } [get_ports { sw[0] }]; # SW0
+set_property -dict { PACKAGE_PIN P15 IOSTANDARD LVCMOS33 } [get_ports { sw[1] }]; # SW1
+
+## ===== LED =====
+set_property -dict { PACKAGE_PIN M14 IOSTANDARD LVCMOS33 } [get_ports { led }];   # LED0
+
+
+####################################################################################################################
+
+## SW0
+set_property PACKAGE_PIN U9 [get_ports {sw[0]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw[0]}]
+
+## SW1
+set_property PACKAGE_PIN U8 [get_ports {sw[1]}]
+set_property IOSTANDARD LVCMOS33 [get_ports {sw[1]}]
+
+## LED0
+set_property PACKAGE_PIN T8 [get_ports led]
+set_property IOSTANDARD LVCMOS33 [get_ports led]
+
+
+####################################################################################################################
